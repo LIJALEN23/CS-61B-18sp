@@ -26,5 +26,5 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-.iml
 .idea
+/CS 61B.iml
