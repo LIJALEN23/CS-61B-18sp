@@ -1,4 +1,5 @@
-package lecture4;
+package code4;
+
 public class test {
     public static void main(String[] args){
         SLList l = new SLList(12);

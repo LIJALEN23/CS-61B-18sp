@@ -1,3 +1,3 @@
-package lecture5;
+package code5;
 public class genericList {
 }

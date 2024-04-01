@@ -1,4 +1,4 @@
-package lecture3;
+package code3;
 
 public class IntList1 {
     public int val;

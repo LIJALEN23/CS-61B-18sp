@@ -1,3 +1,5 @@
+package code6;
+
 public class AList {
     int[] items;
     int size;
@@ -12,14 +14,14 @@ public class AList {
     }
 
     public int getLast() {
-
+        return 0;
     }
 
     public int get(int i) {
-
+        return 0;
     }
 
     public int size() {
-
+        return 0;
     }
 }

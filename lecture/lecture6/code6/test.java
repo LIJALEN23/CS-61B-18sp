@@ -1,3 +1,5 @@
+package code6;
+
 public class test {
     public static void main(String[] args){
         GenericAList<Integer> list = new GenericAList<>() ;

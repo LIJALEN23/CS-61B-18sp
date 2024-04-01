@@ -1,4 +1,4 @@
-package lecture4;
+package code4;
 public class SLList {
     public static class IntNode {
         public int val;

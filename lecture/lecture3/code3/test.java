@@ -1,4 +1,7 @@
-package lecture3;
+package code3;
+
+import code3.IntList1;
+import code3.IntList2;
 
 public class test {
     public static void main(String[] args){

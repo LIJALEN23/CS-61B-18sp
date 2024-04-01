@@ -1,3 +1,5 @@
+package code6;
+
 public class GenericAList<Item> {
     private Item[] items;
     private int size;

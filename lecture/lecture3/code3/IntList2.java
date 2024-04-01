@@ -1,4 +1,4 @@
-package lecture3;
+package code3;
 public class IntList2 {
     public int val;
     public IntList2 next;
