@@ -1,5 +1,4 @@
 package HW0;
-
 public class exercise1a {
     public static void PrintTriangle1(){
         for (int i =1; i <= 5; ++i){
