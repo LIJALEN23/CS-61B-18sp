@@ -4,12 +4,17 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/lecture/lecture6/lecture6" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/homework/HW0/HW0" />
+      <sourceFolder url="file://$MODULE_DIR$/project/project0" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lecture/lecture3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lecture/lecture4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lecture/lecture5" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lecture/lecture6" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/homework/HW0" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/homework/HW1" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/lecture/lecture3/lecture3" />
       <excludeFolder url="file://$MODULE_DIR$/lecture/lecture4/lecture4" />
       <excludeFolder url="file://$MODULE_DIR$/lecture/lecture5/lecture5" />
-      <excludeFolder url="file://$MODULE_DIR$/project/project0" />
+      <excludeFolder url="file://$MODULE_DIR$/lecture/lecture6/lecture6" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
