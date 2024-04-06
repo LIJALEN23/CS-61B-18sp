@@ -1,0 +1,11 @@
+# DequeNotes
+### LinkedListDeque
+1. 定义Node和Node的构造器（包括普通的Node和Sentinel）
+2. 设置哨兵Node和size
+3. 构造LinkedListDeque的构造器
+4. 增加新Node时，注意调整Node和Sentinel的关系
+5. 如何递归get
+### ArrayDeque
+1. 构造ArrayDeque的构造器
+2. 如何调整数组的大小
+3. 如何在不改变数组元素的储存位置的前提下，为元素提供逻辑上的相对位置
