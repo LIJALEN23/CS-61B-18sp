@@ -1,10 +1,10 @@
 package code4;
-public class SLList {
-    public static class IntNode {
-        public int val;
+public class SLList<ElemType> {
+    public static class IntNode<ElemType> {
+        public ElemType val;
         public IntNode next;
 
-        public IntNode(int v, IntNode n) {
+        public IntNode(ElemType v, IntNode n) {
             val = v;
             next = n;
         }
@@ -13,12 +13,12 @@ public class SLList {
     private IntNode first;
     private int size;
 
-    public SLList(int val) {
+    public SLList(ElemType val) {
         first = null;
         size = 0;
     }
 
-    public void addFirst(int val) {
+    public void addFirst(ElemType val) {
         if (first == null){
             first = new IntNode(val,null);
             size += 1;
@@ -28,11 +28,11 @@ public class SLList {
         size += 1;
     }
 
-    public int getFirst() {
+    public ElemType getFirst() {
         if (first == null){
             System.out.println("List is empty");
         }
-        return first.val;
+        return (ElemType) first.val;
     }
 
     public void addLast(int val) {
@@ -48,16 +48,16 @@ public class SLList {
         size += 1;
     }
 
-    public int getLast() {
+    public ElemType getLast() {
         IntNode p = this.first;
         if (p == null){
             System.out.println("List is empty");
-            return -1;
+//            return (ElemType) -1;
         }
         while (p.next != null) {
             p = p.next;
         }
-        return p.val;
+        return (ElemType) p.val;
     }
 
 //

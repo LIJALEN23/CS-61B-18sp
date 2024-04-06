@@ -9,6 +9,7 @@ public class AList {
         size = 0;
     }
 
+
     public void addList(int x) {
 
     }

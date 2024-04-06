@@ -8,12 +8,26 @@ public class GenericAList<Item> {
         items = (Item[]) new Object[100];
         size = 0;
     }
+
+    public void insert(Item x,int position) {
+
+    }
+    public void addFirst(Item x) {
+
+    }
+    public void addLast(Item x) {
+
+    }
+    public Item getFirst() {
+
+        return items[0];
+    }
+
     private void resize(int capacity) {
         Item[] temp = (Item[]) new Object[capacity];
         System.arraycopy(items, 0, temp, 0, size);
         items = temp;
     }
-
     public void addList(Item x) {
         if (items.length == size){
             resize(size * 4);
