@@ -16,15 +16,21 @@ public class ArrayDeque<T> implements Deque<T>{
     }
 
     private void resize(int capacity) {
-        size = capacity;
         T[] newArray = (T[]) new Object[capacity];
         for (int i = 0; i < length; i++) {
-            newArray[i] = array[i];
+            newArray[i] = array[(front + i) % size];
         }
+        size = capacity;
+        array = newArray;
+        front = 0;
+        rear = length;
     }
     public void addFirst(T item){
         if (length == size ) {
-            resize(size * 4);
+            resize(size * 2);
+        }
+        if (length == 0) {
+            array[front] = item;
         }
         front = (front - 1 + size) % size;
         array[front] = item;
@@ -32,7 +38,7 @@ public class ArrayDeque<T> implements Deque<T>{
     }
     public void addLast(T item){
         if (length == size) {
-            resize(size * 4);
+            resize(size * 2);
         }
         array[rear] = item;
         rear = (rear + 1 ) % size;
@@ -45,16 +51,39 @@ public class ArrayDeque<T> implements Deque<T>{
         return length;
     }
     public void printDeque(){
-
+        if (!isEmpty()) {
+            System.out.print("ArrayDeque : ");
+            for (int i = front; i < front + length; i++) {
+                System.out.print(array[i] + " ");
+            }
+            System.out.println();
+        }
+        else {
+            System.out.println("ArrayDeque is empty!");
+        }
     }
     public T removeFirst(){
-
-        return
+        if (!isEmpty()) {
+            T val = array[front];
+            length--;
+            front = (front + 1 + size - 1) % size;
+            return val;
+        }
+        return null;
     }
     public T removeLast(){
-
+        if (!isEmpty()){
+            T val = array[rear];
+            length--;
+            rear = (rear - 1 + size -1) % size;
+            return val;
+        }
+        return null;
     }
     public T get(int index){
-
+        if (index > 0 && index <= length) {
+            return array[(front + index - 1) % length];
+        }
+        return null;
     }
 }

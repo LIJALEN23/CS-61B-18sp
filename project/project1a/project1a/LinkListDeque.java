@@ -56,9 +56,10 @@ public class LinkListDeque<T> implements Deque<T> {
                 ptr = ptr.next;
             }
             System.out.println();
-            return;
         }
-        System.out.println("List is empty!");
+        else {
+            System.out.println("List is empty!");
+        }
     }
     public T removeFirst(){
         if (!isEmpty()) {
