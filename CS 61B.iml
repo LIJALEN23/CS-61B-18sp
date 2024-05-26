@@ -14,6 +14,11 @@
       <sourceFolder url="file://$MODULE_DIR$/lecture/lecture7" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/project/project1a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lecture/lecture8" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lecture/lecture10" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lecture/lecture9" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/project/project1b" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lecture/lecture1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lecture/lecture2" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/lecture/lecture3/lecture3" />
       <excludeFolder url="file://$MODULE_DIR$/lecture/lecture4/lecture4" />
       <excludeFolder url="file://$MODULE_DIR$/lecture/lecture5/lecture5" />

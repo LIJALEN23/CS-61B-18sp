@@ -1,29 +1,45 @@
-# Objects
-## Static vs Non-Static Methods
-1. static methods : 可以不用实例化直接通过类名使用(就像函数一样)
-2. non-static methods : 必须实例化一个对象才能使用
-
-## Constructors in Java
-关键字 : new
-实例化一个对象需要通过构造函数的使用
-## String[] args
-命令行参数
+# notes2-1
+## Reference(引用),Recursion(递归) and Lists(表)
+### 位(bits)
+计算机底层以010101代码进行储存
+### 基本类型(primitive type)
+八种基本类型：byte,short,int,long,float,double,boolean,char
+### 引用类型(reference type)
+除了八种基本类型以外的类型都是引用类型(相当于简化了C语言中的指针)，包括数组也是引用类型
+### 参数传递
+在Java中使用是按值传递
+Java 是按值传递参数的，但对于对象而言，传递的是对象引用的值。这意味着当你向一个静态方法传递一个对象时，方法接收到的是该对象的引用，而不是对象的副本。因此，静态方法可以通过这个引用修改对象的属性。
+但是需要注意，如果在静态方法中改变对象引用本身（即让引用指向一个新的对象），不会影响传入方法的那个引用。这是因为 Java 按值传递的是对象引用的副本。
+### 实例化数组
 ```java
-public class Print {
-    public static void main(String[] args) {
-        for (int i : args) {
-            system.out.println(i);
-        }
-    }
-}
+elementType[] name = new elementType[arraySize];
 ```
-```shell
-javac Print.java
-java Print.class Hello world!
-```
-```
-Hello
-world!
-```
-## Using libraries
-了解怎么使用Java的库
+### IntLists
+涉及到new关键字的使用和引用变量的问题
+IntList.java
+
+# notes2-2
+## SLLists(单链表),Nested Classes(嵌套类),Sentinel Nodes(哨兵节点)
+### SLLists
+1. 将IntList独立出来变成IntNode嵌套在SLList中
+2. 用private声明first节点以避免在外部修改了SLList
+3. 将IntNode定义成static(这意味着IntNode不能使用SLList中的非静态方法，但是这会减少内存的占用)
+4. 辅助递归来完成size的功能
+5. Caching : 为了避免大型SLList中的从头size很麻烦，所以在每次添加节点时就直接计算size(private int size)
+6. 空列表 : 构造SLList时没有输入数据则构造一个空列表
+7. 哨兵节点 ：可以提高代码的可读性
+
+将IntList这个类变成IntNode(即一个基本的头节点)嵌套在SLList中实现一个单链表使addFirst这类操作很简单
+关键字public,private,protect
+### Nested Classes
+嵌套并不会影响性能
+像IntNode这个类嵌套在SLList中，可以用static定义(这意味着IntNode不能使用SLList中的非静态方法，但是这会减少内存的占用)
+### Sentinel Nodes
+将第一个节点成为哨兵节点，指向一个SLList并且储存了SLList的长度
+# notes2-3
+## DLLists
+
+# notes2-4
+## Arrays
+# notes2-5
+## ALists,Resizing vs SList
