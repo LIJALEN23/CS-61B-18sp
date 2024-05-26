@@ -1,4 +1,4 @@
-# Extends,Casting,Higher Order Funtions
+# *继承*Extends,Casting,Higher Order Funtions
 
 ## Extends(继承)
 ### Java如何继承的，继承了什么：
