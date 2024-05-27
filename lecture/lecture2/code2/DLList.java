@@ -38,6 +38,8 @@ public class DLList<ElementType, pre> {
 
         else {
             sentinel.next = new IntNode(sentinel.next.pre, item, sentinel.next);
+
+            sentinel.next.next.pre.next = sentinel.next;
             sentinel.next.next.pre = sentinel.next;
             size += 1;
         }
