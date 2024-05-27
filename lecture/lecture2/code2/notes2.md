@@ -38,8 +38,35 @@ IntList.java
 将第一个节点成为哨兵节点，指向一个SLList并且储存了SLList的长度
 # notes2-3
 ## DLLists
+由于SLList的addLast()很慢，所以将SLList改为DLList可以将对头节点和尾节点的操作变快和方便
+改进办法：在节点储存一个前驱节点
+改进哨兵节点：1. 加一个指向最后元素的哨兵节点 2. 直接变成循环链表
 
+将链表泛化(Generic DLList<ElementType>)
+泛化：
+   1. 只需要在文件的最顶部的类名之后指定一次泛型类型的名称 
+   2. 在使用您的数据结构的其他 .java 文件中，在声明期间指定特定的所需类型，并在实例化期间使用空菱形运算符。
+   3. 如果需要在原始类型上实例化泛型，使用Integer,Double,Character,Boolean,Short,Byte,Float
+泛型的知识在后面的章节中
 # notes2-4
 ## Arrays
+数组的基本知识：一个固定的大小的数组，和类不一样，数组没有方法
+数组的创建：
+```java
+int[] y = new int[3];
+
+int[] x = new int[]{1, 2, 3, 4, 5};
+int[] w = {1, 2, 3, 4, 5};
+```
+二维数组
+```java
+int[][] array = new int[4][];
+array[0] = new int[]{0, 1, 2, 3};
+
+int[][] array = new int[4][4];
+int[][] array = new int[][]{{1}, {1, 2}, {1, 2, 3}}
+```
+
+
 # notes2-5
 ## ALists,Resizing vs SList
