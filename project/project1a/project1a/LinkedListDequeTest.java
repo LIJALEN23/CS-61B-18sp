@@ -87,34 +87,37 @@ public class LinkedListDequeTest {
     }
 
     public static void main(String[] args) {
-        LinkListDeque l1 = new LinkListDeque<Integer>();
-        l1.addFirst(6);
-        l1.addFirst(5);
-        l1.addFirst(4);
-        l1.addFirst(3);
-        l1.addFirst(2);
-        l1.addFirst(1);
-        l1.printDeque();
+        LinkListDeque<Integer> deque1 = new LinkListDeque<Integer>();
 
-        l1.addLast(7);
-        l1.addLast(8);
-        l1.addLast(9);
-        l1.addLast(10);
-        l1.addLast(11);
-        l1.printDeque();
+        deque1.addFirst(12);
+        deque1.addFirst(23);
+        deque1.addFirst(34);
+        deque1.addFirst(45);
+        deque1.addFirst(56);
+        deque1.addFirst(67);
+        deque1.addFirst(78);
 
-        LinkListDeque l2 = new LinkListDeque<Integer>();
-        l2.printDeque();
+        deque1.printDeque();
 
-        System.out.println("index = 2 : " + l1.get(2));
-        System.out.println("index = 2 : " + l1.getRecursive(2));
+        deque1.addLast(23);
+        deque1.addLast(34);
+        deque1.addLast(45);
+        deque1.addLast(56);
+        deque1.addLast(67);
+        deque1.addLast(78);
 
-        System.out.println("removeFirst : " + l1.removeFirst());
-        System.out.println("removeLast : " + l1.removeLast());
-        l1.printDeque();
+        deque1.printDeque();
 
-//        System.out.println("Running tests.\n");
-//        addIsEmptySizeTest();
-//        addRemoveTest();
+        int first = (int) deque1.removeFirst();
+        int last = (int) deque1.removeLast();
+
+        System.out.println("first element is : " + first);
+        System.out.println("last element is : " + last);
+
+        deque1.printDeque();
+
+        System.out.println("The size deque is " + deque1.size());
+
+        System.out.println("The " + 5 + "th element is " + deque1.get(5) );
     }
 }

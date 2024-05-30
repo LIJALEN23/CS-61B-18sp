@@ -1,89 +1,128 @@
 package project1a;
 
-public class ArrayDeque<T> implements Deque<T>{
-    private T[] array;
+import java.util.Arrays;
+/** 5.27完成了功能的实现但是没有运用异常处理来使代码更健壮*/
+
+public class ArrayDeque<ElementType> {
+
+    private ElementType[] items;
     private int size;
-    private int length;
     private int front;
     private int rear;
 
     public ArrayDeque() {
-        array = (T[])new Object[8];
-        size = 8;
-        length = 0;
-        front = 0;
-        rear = 0;
+        items = (ElementType[]) new Object[8];
+        size = 0;
+        front = 3;
+        rear = 3;
     }
 
-    private void resize(int capacity) {
-        T[] newArray = (T[]) new Object[capacity];
-        for (int i = 0; i < length; i++) {
-            newArray[i] = array[(front + i) % size];
-        }
-        size = capacity;
-        array = newArray;
-        front = 0;
-        rear = length;
-    }
-    public void addFirst(T item){
-        if (length == size ) {
-            resize(size * 2);
-        }
-        if (length == 0) {
-            array[front] = item;
-        }
-        front = (front - 1 + size) % size;
-        array[front] = item;
-        length++;
-    }
-    public void addLast(T item){
-        if (length == size) {
-            resize(size * 2);
-        }
-        array[rear] = item;
-        rear = (rear + 1 ) % size;
-        length++;
-    }
-    public boolean isEmpty(){
-        return (length == 0);
-    }
-    public int size(){
-        return length;
-    }
-    public void printDeque(){
-        if (!isEmpty()) {
-            System.out.print("ArrayDeque : ");
-            for (int i = front; i < front + length; i++) {
-                System.out.print(array[i] + " ");
+    private void resize() {
+        double usageRate =(double) size / items.length;
+
+        if (usageRate < 0.25 || usageRate > 0.95) {
+            //将数组调整到一个合适的长度
+            int newCapacity = (int) (size / 0.5);
+            ElementType[] newItems =(ElementType[]) new Object[newCapacity];
+
+            //有两种情况：1. front在rear前面(它们之间的为元素数组) 2. front在rear后面(元素数组分为两部分：front到末尾，首位到rear)
+            if (front <= rear) {
+                System.arraycopy(items, front, newItems, 0, size );
             }
-            System.out.println();
+
+            else {
+                System.arraycopy(items, front, newItems, 0, items.length - front);
+                System.arraycopy(items, 0, newItems, items.length - front, rear + 1);
+            }
+
+            front = 0;
+            rear = size - 1;
+
+            items = newItems;
         }
+
         else {
-            System.out.println("ArrayDeque is empty!");
+            //数组大小不用变
+            return;
         }
     }
-    public T removeFirst(){
-        if (!isEmpty()) {
-            T val = array[front];
-            length--;
-            front = (front + 1 + size - 1) % size;
-            return val;
+
+    public void addFirst(ElementType item) {
+        //数组的长度开始使用大于等于8的时候才开始调整数组以减少性能的消耗
+        if (size >= 8) {
+            resize();
         }
-        return null;
+
+        //size等于0的时候比较特殊
+        if (size == 0) {
+            items[front] = item;
+            size += 1;
+            return;
+        }
+
+        //通用的在队列前面加元素
+        front = (front - 1 + items.length) % items.length;
+        items[front] = item;
+        size += 1;
     }
-    public T removeLast(){
-        if (!isEmpty()){
-            T val = array[rear];
-            length--;
-            rear = (rear - 1 + size -1) % size;
-            return val;
+
+    public void addLast(ElementType item) {
+        if (size >= 8) {
+            resize();
         }
-        return null;
+
+        //size等于0的时候比较特殊
+        if(size == 0) {
+            items[rear] = item;
+            size += 1;
+            return;
+        }
+
+        //通用的在队列后面加元素
+        rear = (rear + 1) % items.length;
+        items[rear] = item;
+        size += 1;
     }
-    public T get(int index){
-        if (index > 0 && index <= length) {
-            return array[(front + index - 1) % length];
+
+    public boolean isEmpty() {
+        return (size == 0);
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public void printDeque() {
+        System.out.print("The ArrayDeque is : ");
+
+        for (int i = front,  j = 0; j < size; i = (i + 1) % items.length, j += 1) {
+
+            System.out.print(items[i] + " ");
         }
-        return null;
+        System.out.println();
+    }
+
+    public ElementType removeFirst() {
+        ElementType val = items[front];
+
+        items[front] = null;//防止内存泄露
+        front = (front + 1) % items.length;
+
+        size -= 1;
+        return val;
+    }
+
+    public ElementType removeLast() {
+        ElementType val = items[rear];
+
+        items[rear] = null;
+        rear = (rear - 1 + items.length) % items.length;
+
+        size -= 1;
+        return val;
+    }
+
+    public ElementType get(int index) {
+        return items[(front + index - 1) % items.length];
     }
 }
