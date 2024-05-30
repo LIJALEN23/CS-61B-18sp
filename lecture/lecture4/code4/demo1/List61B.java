@@ -1,4 +1,4 @@
-package code4;
+package code4.demo1;
 
 public interface List61B<Item> {
     public void addFirst(Item x);

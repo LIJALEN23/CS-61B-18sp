@@ -1,6 +1,4 @@
-package code4;
-
-import java.awt.*;
+package code4.demo1;
 
 public class AList<Item> implements List61B<Item> {
 

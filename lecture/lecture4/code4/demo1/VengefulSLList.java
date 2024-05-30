@@ -1,4 +1,4 @@
-package code4;
+package code4.demo1;
 
 public class VengefulSLList<Item> extends SLList<Item> {
     public SLList deletedItems;
