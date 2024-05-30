@@ -31,7 +31,7 @@ public class SLList<Item> implements List61B<Item> {
 
     @Override
     public void addLast(Item y) {
-        Node temp = sentinel.next;
+        Node temp = sentinel;
 
         while (temp.next != null) {
             temp = temp.next;
@@ -66,7 +66,7 @@ public class SLList<Item> implements List61B<Item> {
             temp = temp.next;
         }
 
-        Item val =(Item) temp.next.next.val;
+        Item val =(Item) temp.next.val;
         temp.next = null;
 
         return val;
@@ -113,8 +113,8 @@ public class SLList<Item> implements List61B<Item> {
         Node temp = sentinel.next;
 
         System.out.print("List is : ");
-        for (int i = 0; i < size; i += 1) {
-            System.out.print(temp.val);
+        for (int i = 0; i < size && temp != null; i += 1) {
+            System.out.print(temp.val + " ");
             temp = temp.next;
         }
         System.out.println();
