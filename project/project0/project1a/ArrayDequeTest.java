@@ -1,7 +1,5 @@
 package project1a;
 
-import project0.In;
-
 public class ArrayDequeTest {
     public static void main(String[] args) {
         ArrayDeque<Integer> deque1 = new ArrayDeque<Integer>();
