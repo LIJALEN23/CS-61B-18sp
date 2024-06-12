@@ -23,6 +23,10 @@
       <sourceFolder url="file://$MODULE_DIR$/discussion/discussion2" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/discussion/discussion3" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/discussion/discussion 4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/discussion/discussion5" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/discussion/discussion6" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/project/project2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DataStructueAndAlgorithm/DisjointSets" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/lecture/lecture3/lecture3" />
       <excludeFolder url="file://$MODULE_DIR$/lecture/lecture4/lecture4" />
       <excludeFolder url="file://$MODULE_DIR$/lecture/lecture5/lecture5" />
@@ -39,6 +43,17 @@
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/project/project2/byog/stdlib.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/project/project2/byog/stdlib.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>
