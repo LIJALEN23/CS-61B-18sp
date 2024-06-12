@@ -1,1 +1,0 @@
-# 多态subtype prlymorphism
