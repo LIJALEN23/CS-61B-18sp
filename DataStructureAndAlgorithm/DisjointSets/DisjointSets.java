@@ -1,3 +1,12 @@
+/**========================
+ *      并查集的简单实现
+ * 完成时间2024.6.12
+ * 问题：未测试
+ *
+ * 借鉴于ChatGPT
+ * ========================
+ * */
+
 public class DisjointSets {
     private int[] parent;
     private int[] rank;
