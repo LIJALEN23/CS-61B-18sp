@@ -3,8 +3,8 @@
  * 完成时间：
  * 问题：未测试
  *
- * 借鉴于ChatGPT
+ * 借鉴于讯飞星火
  * =========================
  * */
-public class RedBlackBST<Key extends Comparable<Key>, Val> {
+public class RedBlackBST2 {
 }

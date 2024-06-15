@@ -48,11 +48,11 @@ public class AVLBST <Key extends Comparable<Key>, Val>{
     /**左旋转
      * 当一个节点的平衡因子 < -1 时， 将该节点进行左旋转，该节点的右孩子成为新的父节点，并将该节点的左孩子成为原节点的右孩子*/
     private Node leftRotate(Node z) {
-        Node y = z.right;
-        Node T2 = y.left;
+        Node y = z.right;   //将该节点的右孩子存起来
+        Node T2 = y.left;   //将右孩子的左孩子存起来
 
-        y.left = z;
-        z.right = T2;
+        y.left = z;     //发生左旋转，该节点成为右孩子的左孩子
+        z.right = T2;   //将初始节点的右孩子的左孩子放在新的位置(可能是空节点)
 
         //更新两个节点的高度
         updateHeight(z);
