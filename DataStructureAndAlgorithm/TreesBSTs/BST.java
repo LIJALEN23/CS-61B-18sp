@@ -3,6 +3,8 @@
  * 完成时间：2024.6.13
  * 问题：未测试
  *
+ * 难点：
+ *
  * 借鉴于菜鸟教程
  * ===========================
  * */
@@ -130,7 +132,7 @@ public class BST <Key extends Comparable<Key>, Val> {
             return new Node(key, val);
         }
 
-        int cmp = key.compareTo(root.key);
+        int cmp = key.compareTo(node.key);
         if (cmp > 0) {
             node.right = insert(node.right, key, val);
         }
